@@ -1,0 +1,19 @@
+package br.com.fiap.teste;
+import java.lang.reflect.Field;
+import br.com.fiap.bean.Carro;
+
+public class teste {
+
+	public static void main(String[] args) {
+		Carro carro = new Carro();
+		criarTabela(carro);
+	}
+
+	public static void criarTabela(Object obj) {
+		//api reflection vamos recuperar o nome da classe
+		String nome = obj.getClass().getName();
+		System.out.println(nome);
+		//recueprar os atributos da classe
+		Field[] atributos = obj.getClass().getDeclaredFields();
+	}
+}
